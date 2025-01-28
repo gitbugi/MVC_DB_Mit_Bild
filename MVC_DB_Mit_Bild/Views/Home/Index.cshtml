@@ -1,0 +1,25 @@
+﻿@using MVC_DB_Mit_Bild.Models
+@model List<Person>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Personen DB</h1>
+    <a href="/home/admin">Admin</a>
+    <div class="cards">
+        @foreach (var card in Model)
+        {
+            <div>
+                <a href="/home/details?id=@card.PID">🔎</a>
+                <div>@card.Vorname</div>
+                <div>@card.Nachname</div>
+                <img src="/images/@card.Bild" alt="Bild nicht vorhanden" height="200px"/>
+            </div>
+        }
+    </div>
+</body>
+</html>

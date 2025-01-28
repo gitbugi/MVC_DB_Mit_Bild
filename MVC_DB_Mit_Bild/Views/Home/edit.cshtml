@@ -1,0 +1,52 @@
+﻿@using MVC_DB_Mit_Bild.Models
+@model Person
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>edit</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <form action="/home/edit" method="post" enctype="multipart/form-data" class="insertTabelle">
+        <h1>Edit</h1>
+        <input asp-for="PID" type="hidden"/>
+        <br />
+        <label asp-for="Vorname"></label>
+        <br />
+        <input asp-for="Vorname" />
+        <span asp-validation-for="Vorname" style="color: red"></span>
+        <br />
+        <label asp-for="Nachname"></label>
+        <br />
+        <input asp-for="Nachname" />
+        <span asp-validation-for="Nachname" style="color: red"></span>
+        <br />
+        <label asp-for="Geburtsdatum"></label>
+        <br />
+        <input asp-for="Geburtsdatum" type="date" />
+        <span asp-validation-for="Geburtsdatum" style="color: red"></span>
+        <br />
+        <label asp-for="groesse"></label>
+        <br />
+        <input asp-for="groesse" type="number" />
+        <span asp-validation-for="groesse" style="color: red"></span>
+        <br />
+        <label asp-for="Uploaddatei"></label>
+        <br />
+        <input asp-for="Uploaddatei" type="file" />
+        <span asp-validation-for="Uploaddatei" style="color: red"></span>
+        <br />
+        <label asp-for="Gewicht"></label>
+        <br />
+        <input asp-for="Gewicht" />
+        <span asp-validation-for="Gewicht" style="color: red"></span>
+        <br />
+        <br />
+        <button type="submit">Speichern</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>

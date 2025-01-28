@@ -1,0 +1,47 @@
+﻿@using MVC_DB_Mit_Bild.Models
+@model List<Person>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>admin</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Personen DB Admin</h1>
+    <div class="hrefs">
+        <a href="/home/Index">zurück</a>
+        <a href="/home/insert">Neu</a>
+    </div>
+    <table border="1">
+        <tr>
+            <th>PID</th>
+            <th>Vorname</th>
+            <th>Nachname</th>
+            <th>Geburtsdatum</th>
+            <th>Groesse</th>
+            <th>Bild</th>
+            <th>Gewicht</th>
+            <th>&nbsp;</th>
+        </tr>
+        @foreach (var data in Model)
+        {
+            <tr>
+                <td>@data.PID</td>
+                <td>@data.Vorname</td>
+                <td>@data.Nachname</td>
+                <td>@data.Geburtsdatum</td>
+                <td>@data.groesse</td>
+                <td><img src="/images/@data.Bild" height="50px" /></td>
+                <td>@data.Gewicht</td>
+                <td>
+                    <a href="/home/admin?id=@data.PID">&#x274C;</a>
+                    <a href="/home/edit?id=@data.PID">✒</a>
+                    <a href="/home/details?id=@data.PID">🔎</a>
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿@using MVC_DB_Mit_Bild.Models
+@model Person
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>details</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="detailsList">
+        <div class="detailsListField">
+            <ul>
+                <li>Vorname: @Model.Vorname</li>
+                <li>Nachname: @Model.Nachname</li>
+                <li>Geburtsdatum: @Model.Geburtsdatum</li>
+                <li>Größe: @Model.groesse</li>
+                <li>Gewicht: @Model.Gewicht kg</li>
+            </ul>
+        </div>
+        <div class="detailsListField">
+            <a href="/home/Index">Übersicht</a>
+            <img height="200px" src="/images/@Model.Bild" />
+        </div>
+    </div>
+</body>
+</html>
